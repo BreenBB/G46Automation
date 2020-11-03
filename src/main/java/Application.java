@@ -7,31 +7,25 @@ import java.util.*;
 
 public class Application {
 
-    private final static Logger LOG = LogManager.getLogger("Основной класс приложения");
+    private final static Logger LOG = LogManager.getLogger("Класс Application");
 
     public static void main(String[] args) {
-        LOG.debug("");
-
         //Домашнее задание №1
         //Задание А
         HomeWork01A hw01a = new HomeWork01A();
         hw01a.List();
 
         //Задание Б
-        System.out.println("======");
-        System.out.println("Отсортированый Лист:");
+        LOG.info("Отсортированый Лист:");
         HomeWork01B hw01b = new HomeWork01B();
         hw01b.PrintList(hw01a.List());
 
         //Домашнее задание №2
-        System.out.println("======");
-        System.out.println("Вызов из экземпляра класса А, null");
+        LOG.info("Вызов из экземпляра класса А, null");
         hw01a.SplitList(null);
-        System.out.println("======");
-        System.out.println("Вызов из экземпляра класса B, лист из экземпляра класса А");
+        LOG.info("Вызов из экземпляра класса B, лист из экземпляра класса А");
         hw01b.SplitList(hw01a.List());
-        System.out.println("======");
-        System.out.println("Вызов из экземпляра класса B, new ArrayList<String>()");
+        LOG.info("Вызов из экземпляра класса B, new ArrayList<String>()");
         List<String> inputlist = new ArrayList<String>();
         hw01b.SplitList(inputlist);
     }
