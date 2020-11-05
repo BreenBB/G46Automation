@@ -7,12 +7,12 @@ import java.util.Collections;
 import java.util.List;
 
 public class HomeWork01B extends HomeworkParrent {
-    private final Logger LOG = LogManager.getLogger(this.name);
+    private final Logger LOG = LogManager.getLogger(HomeWork01B.name);
 
     public int number;
 
     public HomeWork01B(){
-        super("HomeWork01B");
+        super("Класс Б");
         LOG.info("Создан пустой экземпляр класса HomeWork01B");
     }
 
@@ -21,10 +21,10 @@ public class HomeWork01B extends HomeworkParrent {
         this.number=number;
     }
 
-    public void PrintList(List<String> inputlist){
+    public void printList(List<String> inputlist){
         //Сортировака Листа
-        LOG.debug("Метод PrintList для вывода элементов из листа " + inputlist + " в отсортированном порялке");
-        LOG.debug("Сортировка inputlist");
+        LOG.debug("Метод printList для вывода элементов из листа " + inputlist + " в отсортированном порялке.");
+        LOG.debug("Сортировка inputlist.");
         Collections.sort(inputlist);
 
         for(int i = 0; i<inputlist.size(); i++){

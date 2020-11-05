@@ -8,7 +8,7 @@ import java.util.List;
 
 public class HomeWork01A extends HomeworkParrent {
 
-    private final Logger LOG = LogManager.getLogger(this.name);
+    private final Logger LOG = LogManager.getLogger(HomeWork01A.name);
 
     //Массив для Задания А
     public String[] sArray = {"F", "D", "Alpha", "C", "Beta", "E"};
@@ -16,7 +16,7 @@ public class HomeWork01A extends HomeworkParrent {
     public int number;
 
     public HomeWork01A(){
-        super("HomeWork01A");
+        super("Класс А");
         LOG.info("Создан пустой экземпляр класса HomeWork01A");
     }
 
@@ -26,16 +26,15 @@ public class HomeWork01A extends HomeworkParrent {
     }
 
 
-    public List<String> List() {
+    public List<String> list() {
 
+        LOG.debug("Метод list переносящий элементы из массива sArray в лист list, выход из цикла когда i == 4." );
         int i = 0;
         List<String> list = new ArrayList<>();
 
-        //System.out.println("Лист из Задания A:");
-
         while (i < 5) {
+            LOG.debug("Элемент " + i + " перенесен." );
             list.add(sArray[i]);
-            //System.out.println(list.get(i)); //вывод Листа А для проверки
             i++;
         }
         return list;

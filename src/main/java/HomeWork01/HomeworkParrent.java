@@ -7,16 +7,16 @@ import java.util.List;
 
 public class HomeworkParrent {
 
-    private final Logger LOG = LogManager.getLogger(this.name);
+    private final Logger LOG = LogManager.getLogger(HomeworkParrent.name);
 
-    protected String name;
+    protected static String name;
 
     HomeworkParrent(String name) {
-        this.name=name;
+        HomeworkParrent.name=name;
     }
 
-    public void SplitList(List<String> inputlist){
-        LOG.debug("Метод SplitList принимает List<String> и через split() разделяет слова на отдельые массивы и при помощи второго цикла выводит каждый элемент массивов слов.");
+    public void splitList(List<String> inputlist){
+            LOG.debug("Метод splitList принимает List<String> и через split() разделяет слова на отдельые массивы и при помощи второго цикла выводит каждый элемент массивов слов.");
         try {
             for(int i = 0; i<inputlist.size(); i++){
 
@@ -28,19 +28,19 @@ public class HomeworkParrent {
                 LOG.info("Элемент №" + i + ":");
                 for(String number : split){
                     LOG.info(number);
-                };
+                }
             }
         } catch(Exception e){
             if (e instanceof NullPointerException) {
-                LOG.error("Массив не определён. Пожалуйста проверьте корректность вводимых значений");
+                LOG.error("Массив не определён. Пожалуйста проверьте корректность вводимых значений.");
             } else {
                 LOG.error("Произошла неизвестная ошибка. Подробнее: " + e);
             }
         }
     }
 
-    public void PrintText(){
-        LOG.info(name + " :Выведен текст");
+    public void printText(){
+        LOG.info(name + " :Выведен текст.");
     }
 
 }
