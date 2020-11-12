@@ -1,4 +1,4 @@
-package HomeWork01;
+package old.HomeWork01;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class HomeWork01B extends HomeworkParrent {
-    private final Logger LOG = LogManager.getLogger(HomeWork01B.name);
+    private final Logger LOG = LogManager.getLogger(name);
 
     public int number;
 

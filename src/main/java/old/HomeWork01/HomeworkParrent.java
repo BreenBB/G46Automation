@@ -1,4 +1,4 @@
-package HomeWork01;
+package old.HomeWork01;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

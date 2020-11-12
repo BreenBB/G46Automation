@@ -1,4 +1,4 @@
-package HomeWork01;
+package old.HomeWork01;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,7 +8,7 @@ import java.util.List;
 
 public class HomeWork01A extends HomeworkParrent {
 
-    private final Logger LOG = LogManager.getLogger(HomeWork01A.name);
+    private final Logger LOG = LogManager.getLogger(name);
 
     //Массив для Задания А
     public String[] sArray = {"F", "D", "Alpha", "C", "Beta", "E"};

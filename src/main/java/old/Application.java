@@ -1,5 +1,7 @@
-import HomeWork01.HomeWork01A;
-import HomeWork01.HomeWork01B;
+package old;
+
+import old.HomeWork01.HomeWork01A;
+import old.HomeWork01.HomeWork01B;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -7,7 +9,7 @@ import java.util.*;
 
 public class Application {
 
-    private final static Logger LOG = LogManager.getLogger("Класс Application");
+    private final static Logger LOG = LogManager.getLogger("Класс Аpplication");
 
     public static void main(String[] args) {
         //Домашнее задание №1
