@@ -7,17 +7,18 @@ import org.openqa.selenium.WebDriver;
 import java.util.concurrent.TimeUnit;
 
 public class MainPage extends BasePage {
+    private final static String TITLE = "Основная страница GitHub";
 
     private By projectLink = By.xpath("//aside[1]//*[@id=\"repos-container\"]/ul/li/div/a");
     private By logOutText = By.xpath("//h1[text() = 'Built for developers']");
 
     public MainPage(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 
-    public ProjectG46Page clickProjectLink() {
+    public ProjectPage clickProjectLink() {
         driver.findElement(projectLink).click();
-        return new ProjectG46Page(driver);
+        return new ProjectPage(driver);
     }
 
     public MainPage checkProjectLink() {

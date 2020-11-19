@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.NoSuchElementException;
 import pages.LoginPage;
 
-public class HomeWork01Test extends BaseTest {
+public class HomWorld02Test extends BaseTest {
     private LoginPage page;
 
     @Before
@@ -15,17 +15,13 @@ public class HomeWork01Test extends BaseTest {
     }
 
     @Test
-    public void testSeleniumVersion() throws InterruptedException {
+    public void testPrintColoredTabs() throws InterruptedException {
         try{
             page.checkAuthFields()
-                    .login("BreenBB", "UjhltyrjF7be5e")
+                    .login("login", "password")
                     .checkProjectLink()
                     .clickProjectLink()
-                    .checkPomLink()
-                    .clickPomLink()
-                    .checkSeleniumVer()
-                    .getSeleniumVer()
-                    //.checkSignOut()
+                    .printColoredTabs()
                     .logOut(1)
                     .checkLogOutText();
         } catch (NoSuchElementException e){

@@ -5,13 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
+    private final static String TITLE = "Страница авторизации";
 
     private By loginField = By.id("login_field");
     private By passwordField = By.id("password");
     private By signInButton = By.name("commit");
 
     public LoginPage(WebDriver driver) {
-        super(driver);
+        super(driver, TITLE);
     }
 
     public MainPage login(String login, String password) {
