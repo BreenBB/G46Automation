@@ -19,16 +19,15 @@ public abstract class BaseTest {
     public void SetUp() {
         System.setProperty("webdriver.chrome.driver",
                 System.getProperty("user.dir") +
-                        "/src/main/resources/drivers/chrome/v86/chromedriver.exe");
+                        "/src/main/resources/drivers/chrome/v87/chromedriver.exe");
         driver = new ChromeDriver();
        // driver.manage().window().maximize();
         driver.get("https://github.com/login");
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         LOG.info(driver.getCurrentUrl());
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS) ;
         driver.quit();
     }
 }

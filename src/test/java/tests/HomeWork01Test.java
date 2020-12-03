@@ -26,8 +26,8 @@ public class HomeWork01Test extends BaseTest {
                     .checkSeleniumVer()
                     .getSeleniumVer()
                     //.checkSignOut()
-                    .logOut(1)
-                    .checkLogOutText();
+                    .logOut()
+                    .validateLogOut();
         } catch (NoSuchElementException e){
             Assert.fail(e.getMessage());
         }

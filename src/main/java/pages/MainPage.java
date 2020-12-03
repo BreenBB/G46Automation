@@ -3,10 +3,11 @@ package pages;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import pages.code.ProjectPage;
 
 import java.util.concurrent.TimeUnit;
 
-public class MainPage extends BasePage {
+public class MainPage extends BaseAuthorizedPage {
     private final static String TITLE = "Основная страница GitHub";
 
     private By projectLink = By.xpath("//aside[1]//*[@id=\"repos-container\"]/ul/li/div/a");
@@ -26,9 +27,10 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage checkLogOutText() {
+    public MainPage validateLogOut() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Assert.assertTrue("Текст при выходе из логина видим", this.driver.findElement(logOutText).isDisplayed());
         return this;
     }
+
 }
