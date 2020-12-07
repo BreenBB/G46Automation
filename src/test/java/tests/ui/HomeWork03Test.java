@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 
 import org.junit.After;
 import org.junit.Before;
@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import pages.LoginPage;
 import pages.issues.IssuesPage;
+import tests.BaseTest;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,7 +16,7 @@ import static helpers.ExcelHelper.readIssuesDataFromExcelFile;
 import static helpers.FileHelper.readIssuesDataFromFile;
 
 @RunWith(Parameterized.class)
-public class HomeWork03Test extends BaseTest{
+public class HomeWork03Test extends BaseTest {
     private IssuesPage page;
 
     private String title;

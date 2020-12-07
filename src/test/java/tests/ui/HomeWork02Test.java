@@ -1,10 +1,11 @@
-package tests;
+package tests.ui;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.NoSuchElementException;
 import pages.LoginPage;
+import tests.BaseTest;
 
 public class HomeWork02Test extends BaseTest {
     private LoginPage page;
