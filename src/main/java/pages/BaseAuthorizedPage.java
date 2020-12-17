@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.code.ProjectPage;
@@ -22,6 +23,7 @@ public abstract class BaseAuthorizedPage extends BasePage{
     private final By userProfileButton = By.xpath("//summary[@aria-label = 'View profile and more']");
     private final By signOutButton = By.xpath("//button[contains(text(), 'Sign out')]");
 
+    @Step("Открываем проект через поиск")
     public ProjectPage searchProject (String projectName){
         driver.findElement(searchField).click();
         driver.findElement(searchField).sendKeys(projectName);
@@ -30,6 +32,7 @@ public abstract class BaseAuthorizedPage extends BasePage{
         return new ProjectPage(driver);
     }
 
+    @Step("Вызодим из аккаунта GitHub")
     public MainPage logOut(){
         driver.findElement(userProfileButton).click();
         webDriverWait_10.until(elementToBeClickable(signOutButton));

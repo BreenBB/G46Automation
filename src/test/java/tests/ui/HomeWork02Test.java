@@ -1,7 +1,9 @@
 package tests.ui;
 
+import io.qameta.allure.*;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.NoSuchElementException;
 import pages.LoginPage;
@@ -15,6 +17,13 @@ public class HomeWork02Test extends BaseTest {
         this.page = new LoginPage(driver);
     }
 
+    @Owner("BreenBB")
+    @Feature("")
+    @Stories({@Story("Print Tabs in Colors"), @Story("GitHub")})
+    @Link("G-46")
+    @TmsLink("TC-2")
+    @Description("Please ignore me!")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void testPrintColoredTabs() throws InterruptedException {
         try{

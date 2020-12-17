@@ -1,5 +1,6 @@
 package pages.issues;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class IssuesPage extends BasePageWithTabs {
 
     private By newIssueButton = By.xpath("//a[@class = 'btn btn-primary']");
 
+    @Step("Нажимем на кнопку создания Issue")
     public IssueCreationPage pressToCreateNewIssue(){
         log.info("Нажимем на \"Создать новую задачу\"");
         webDriverWait_10.until(elementToBeClickable(newIssueButton));

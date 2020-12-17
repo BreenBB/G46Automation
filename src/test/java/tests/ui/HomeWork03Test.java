@@ -1,7 +1,9 @@
 package tests.ui;
 
+import io.qameta.allure.*;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -51,6 +53,13 @@ public class HomeWork03Test extends BaseTest {
                 .openProjectIssues();
     }
 
+    @Owner("BreenBB")
+    @Feature("")
+    @Stories({@Story("Issue Creation"), @Story("GitHub")})
+    @Link("G-46")
+    @TmsLink("TC-3")
+    @Description("Please ignore me!")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void checkIssueCreation(){
         page.pressToCreateNewIssue()

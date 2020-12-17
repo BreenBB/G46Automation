@@ -1,5 +1,6 @@
 package helpers;
 
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Cell;
@@ -16,6 +17,7 @@ public class ExcelHelper {
 
     private final static Logger LOG = LogManager.getLogger("Обработчик Excel файлов");
 
+    @Step("Считываем данные из Excel файла")
     public static List<Object[]> readIssuesDataFromExcelFile(String path, String sheetName){
         List<Object[]> result = new ArrayList<>();
         try {

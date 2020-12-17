@@ -1,5 +1,6 @@
 package tests.api;
 
+import io.qameta.allure.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.Test;
@@ -10,10 +11,17 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 
-public class ApiHomeWorkTest01 {
+public class ApiHomeWork01Test {
 
     private final static Logger LOG = LogManager.getLogger("API Тест получение списка банкоматов");
 
+    @Owner("BreenBB")
+    @Feature("")
+    @Stories({@Story("List APM adresses"), @Story("Privat bank API")})
+    @Link("G-46")
+    @TmsLink("TC-1")
+    @Description("Please ignore me!")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void checkATMList() {
         List<String> result = given()

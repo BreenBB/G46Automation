@@ -1,5 +1,6 @@
 package helpers;
 
+import io.qameta.allure.Step;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,6 +25,7 @@ public class FileHelper {
         }
     }
 
+    @Step("Считываем данные из текстового файла")
     public static Collection<Object[]> readIssuesDataFromFile(String path){
         Collection<Object[]> result = new ArrayList<>();
         List<String> lines = readLinesFromFile(path);

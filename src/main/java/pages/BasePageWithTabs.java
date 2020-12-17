@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -26,6 +27,7 @@ public abstract class BasePageWithTabs extends BaseAuthorizedPage {
         super(driver, title);
     }
 
+    @Step("Вывод разноцветных названий вкладок в консоли")
     public ProjectPage printColoredTabs(){
         printMessageInColor(driver.findElement(codeTab).getText(), CYAN, log);
         printMessageInColor(driver.findElement(issuesTab).getText(), YELLOW, log);
@@ -39,6 +41,7 @@ public abstract class BasePageWithTabs extends BaseAuthorizedPage {
         return new ProjectPage(driver);
     }
 
+    @Step("Открываем код проекта")
     public ProjectPage openProjectCode(){
         try {
             driver.findElement(codeTab).click();
@@ -48,6 +51,7 @@ public abstract class BasePageWithTabs extends BaseAuthorizedPage {
         return new ProjectPage(driver);
     }
 
+    @Step("Открываем вкладку Issues")
     public IssuesPage openProjectIssues(){
         try {
             driver.findElement(issuesTab).click();
