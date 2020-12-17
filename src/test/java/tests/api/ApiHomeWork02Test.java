@@ -1,5 +1,6 @@
 package tests.api;
 
+import io.qameta.allure.*;
 import io.restassured.http.ContentType;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -24,6 +25,13 @@ public class ApiHomeWork02Test extends BaseApiTest {
     private String contentType;
     private String checkPath;
 
+    @Owner("BreenBB")
+    @Feature("")
+    @Stories({@Story("Get cargo types list"), @Story("Nova Poshta API")})
+    @Link("G-46")
+    @TmsLink("TC-2")
+    @Description("Please ignore me!")
+    @Severity(SeverityLevel.CRITICAL)
     @Parameterized.Parameters
     public static Collection<Object[]> data(){
         List<Object[]> result = new ArrayList<>();
