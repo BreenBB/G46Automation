@@ -28,7 +28,7 @@ public class HomeWork01Test extends BaseTest {
     public void testSeleniumVersion() throws InterruptedException {
         try{
             page.checkAuthFields()
-                    .login("BreenBB", "UjhltyrjF7be5e")
+                    .login(System.getProperty("login"), System.getProperty("password"))
                     .checkProjectLink()
                     .clickProjectLink()
                     .checkPomLink()

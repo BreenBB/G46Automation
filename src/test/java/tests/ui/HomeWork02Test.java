@@ -28,7 +28,7 @@ public class HomeWork02Test extends BaseTest {
     public void testPrintColoredTabs() throws InterruptedException {
         try{
             page.checkAuthFields()
-                    .login("login", "password")
+                    .login(System.getProperty("login"), System.getProperty("password"))
                     .checkProjectLink()
                     .clickProjectLink()
                     .printColoredTabs()

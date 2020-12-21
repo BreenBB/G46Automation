@@ -1,9 +1,8 @@
 package tests.api;
 
 import io.qameta.allure.*;
-import io.restassured.http.ContentType;
+import io.restassured.mapper.ObjectMapperType;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -11,6 +10,7 @@ import org.junit.runners.Parameterized;
 import java.util.*;
 
 import static io.restassured.RestAssured.given;
+import static java.lang.String.format;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 
@@ -19,7 +19,8 @@ public class ApiHomeWork02Test extends BaseApiTest {
 
     private final static String API_KEY = "[ВАШ КЛЮЧ]";
 
-    private Map<String, Object> reqBody = new HashMap<>();
+    private Map<String, Object> reqJSON;
+    private String reqXML;
 
     private String type;
     private String contentType;
@@ -30,8 +31,8 @@ public class ApiHomeWork02Test extends BaseApiTest {
         List<Object[]> result = new ArrayList<>();
         Object[] xml = new Object[3];
         xml[0] = "xml";
-        xml[1] = "text/xml";
-        xml[2] = "data.item.@Ref";
+        xml[1] = "application/xml";
+        xml[2] = "root.data.item.Ref";
         Object[] json = new Object[3];
         json[0] = "json";
         json[1] = "application/json";
@@ -49,15 +50,18 @@ public class ApiHomeWork02Test extends BaseApiTest {
 
     @Before
     public void setReqBody(){
-        //Map<String, Object> methodProperties = new HashMap<>();
-        //methodProperties.put("", "");
-        //methodProperties.put("Limit", 5);
-
-        reqBody.put("modelName", "Common");
-        reqBody.put("calledMethod", "getCargoTypes");
-        //reqBody.put("methodProperties", methodProperties);
-        reqBody.put("apiKey", API_KEY);
-
+        reqJSON = new HashMap<>();
+        Map<String, Object> methodProperties = new HashMap<>();
+        reqJSON.put("modelName", "Common");
+        reqJSON.put("calledMethod", "getCargoTypes");
+        reqJSON.put("methodProperties", methodProperties);
+        reqJSON.put("apiKey", API_KEY);
+        this.reqXML = format("<file>\n" +
+                "<apiKey>%s</apiKey>\n" +
+                "<calledMethod>getCargoTypes</calledMethod>\n" +
+                "<methodProperties />\n" +
+                "<modelName>Common</modelName>\n" +
+                "</file>", API_KEY);
     }
 
     @Owner("BreenBB")
@@ -71,16 +75,18 @@ public class ApiHomeWork02Test extends BaseApiTest {
     public void checkCargoTypes(){
         given()
                 .spec(this.reqspec)
-                .body(this.reqBody)
-                .baseUri("https://api.novaposhta.ua/v2.0/")
+                .baseUri("http://testapi.novaposhta.ua/v2.0")
                 .contentType(this.contentType)
+                .body(this.type.equals("json") ? this.reqJSON : this.reqXML)
                 .when()
-                .post(this.type + "/common/getCargoTypes/")
+                .post("/common/getCargoTypes/" + this.type)
                 .then()
                 .spec(this.resSpec)
                 .assertThat()
                 .body(this.checkPath, hasItems(equalTo("Parcel"),
+                        equalTo("Cargo"),
                         equalTo("Documents"),
+                        equalTo("TiresWheels"),
                         equalTo("Pallet")));
     }
 
