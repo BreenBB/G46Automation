@@ -3,6 +3,7 @@ package tests.ui;
 import io.qameta.allure.*;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -59,6 +60,7 @@ public class HomeWork03Test extends BaseTest {
     @TmsLink("TC-3")
     @Description("Please ignore me!")
     @Severity(SeverityLevel.CRITICAL)
+    @Ignore
     @Test
     public void checkIssueCreation(){
         page.pressToCreateNewIssue()

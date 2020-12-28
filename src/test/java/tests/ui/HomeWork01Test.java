@@ -24,6 +24,7 @@ public class HomeWork01Test extends BaseTest {
     @TmsLink("TC-1")
     @Description("Please ignore me!")
     @Severity(SeverityLevel.CRITICAL)
+    @Ignore
     @Test
     public void testSeleniumVersion() throws InterruptedException {
         try{

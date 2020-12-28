@@ -24,6 +24,7 @@ public class HomeWork02Test extends BaseTest {
     @TmsLink("TC-2")
     @Description("Please ignore me!")
     @Severity(SeverityLevel.CRITICAL)
+    @Ignore
     @Test
     public void testPrintColoredTabs() throws InterruptedException {
         try{
