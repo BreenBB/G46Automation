@@ -9,9 +9,6 @@
     <version>0.1.0</version>
 
     <properties>
-        <browser>${browser}</browser>
-        <driver>${driver}</driver>
-        <driver.path>${driver.path}</driver.path>
         <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
         <allure-junit4.version>2.13.7</allure-junit4.version>
@@ -100,7 +97,7 @@
                 <version>2.12.4</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
-                    <argLine>-Dbrowser=${browser} -D${driver}=${driver.path} -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
+                    <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                     <properties>
                         <property>
                             <name>listener</name>
@@ -129,40 +126,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <id>Chrome</id>
-            <properties>
-                <browser>chrome</browser>
-                <driver>webdriver.chrome.driver</driver>
-                <driver.path>${project.basedir}/src/main/resources/drivers/chrome/v87/chromedriver</driver.path>
-            </properties>
-        </profile>
-        <profile>
-            <id>Firefox</id>
-            <properties>
-                <browser>firefox</browser>
-                <driver>webdriver.gecko.driver</driver>
-                <driver.path>${project.basedir}/src/main/resources/drivers/firefox/v0.28.0/geckodriver</driver.path>
-            </properties>
-        </profile>
-        <profile>
-            <id>InternetExplorer</id>
-            <properties>
-                <browser>firefox</browser>
-                <driver>webdriver.gecko.driver</driver>
-                <driver.path>${project.basedir}/src/main/resources/drivers/firefox/v0.20.0/geckodriver</driver.path>
-            </properties>
-        </profile>
-        <profile>
-            <id>Opera</id>
-            <properties>
-                <browser>firefox</browser>
-                <driver>webdriver.gecko.driver</driver>
-                <driver.path>${project.basedir}/src/main/resources/drivers/firefox/v0.28.0/geckodriver</driver.path>
-            </properties>
-        </profile>
-    </profiles>
-
 </project>
