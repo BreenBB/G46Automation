@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 
-public class ApiHomeWork01Test {
+public class ApiHomeWork01Test extends BaseApiTest {
 
     private final static Logger LOG = LogManager.getLogger("API Тест получение списка банкоматов");
     private String city="киев";
@@ -26,6 +26,7 @@ public class ApiHomeWork01Test {
     @Test
     public void checkATMList() {
         List<String> result = given()
+                .spec(this.reqspec)
                 .queryParam("json")
                 .queryParam("atm")
                 .queryParam("address", "")
@@ -33,6 +34,7 @@ public class ApiHomeWork01Test {
                 .when()
                 .get("https://api.privatbank.ua/p24api/infrastructure")
                 .then()
+                .spec(this.resSpec)
                 .assertThat()
                 .body("devices.type", hasItems(equalTo("ATM")))
                 .body("devices.cityRU", hasItems(equalTo("Киев")))
