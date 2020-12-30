@@ -26,7 +26,6 @@ public class ApiHomeWork01Test extends BaseApiTest {
     public void checkATMList() {
         List<String> result = given()
                 .spec(this.reqspec)
-                .urlEncodingEnabled(false)
                 .queryParam("json")
                 .queryParam("atm")
                 .queryParam("address", "")
