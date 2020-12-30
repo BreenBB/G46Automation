@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 
-public class ApiHomeWork01Test {
+public class ApiHomeWork01Test extends BaseApiTest {
 
     private final static Logger LOG = LogManager.getLogger("API Тест получение списка банкоматов");
 
@@ -24,7 +24,9 @@ public class ApiHomeWork01Test {
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void checkATMList() {
-        List<String> result = given()
+        //List<String> result =
+                given()
+                .spec(this.reqspec)
                 .queryParam("json")
                 .queryParam("atm")
                 .queryParam("address", "")
@@ -32,18 +34,19 @@ public class ApiHomeWork01Test {
                 .when()
                 .get("https://api.privatbank.ua/p24api/infrastructure")
                 .then()
+                .spec(this.resSpec)
                 .assertThat()
                 .body("devices.type", hasItems(equalTo("ATM")))
                 .body("devices.cityRU", hasItems(equalTo("Киев")))
-                .body("devices.cityEN", hasItems(equalTo("Kyiv")))
-                .extract()
-                .jsonPath()
-                .getList("devices.fullAddressRu");
+                .body("devices.cityEN", hasItems(equalTo("Kyiv")));
+                //.extract()
+                //.jsonPath()
+                //.getList("devices.fullAddressRu");
 
-        //Вывод полученных адресов банкоматов
+        /*//Вывод полученных адресов банкоматов
         LOG.info("Адреса Банкоматов: ");
         for(int i = 0; i < result.size(); i++) {
             LOG.info(result.get(i));
-        }
+        }*/
     }
 }
