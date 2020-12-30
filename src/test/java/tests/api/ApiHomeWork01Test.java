@@ -14,7 +14,7 @@ import static org.hamcrest.CoreMatchers.hasItems;
 public class ApiHomeWork01Test {
 
     private final static Logger LOG = LogManager.getLogger("API Тест получение списка банкоматов");
-    private String city="Киев";
+    private String city="киев";
 
     @Owner("BreenBB")
     @Feature("")
