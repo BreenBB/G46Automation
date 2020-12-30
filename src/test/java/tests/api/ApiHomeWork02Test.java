@@ -17,7 +17,7 @@ import static org.hamcrest.CoreMatchers.hasItems;
 @RunWith(Parameterized.class)
 public class ApiHomeWork02Test extends BaseApiTest {
 
-    private final static String API_KEY = "[ВАШ КЛЮЧ]";
+    private final static String API_KEY = System.getProperty("apiKey");
 
     private Map<String, Object> reqJSON;
     private String reqXML;
