@@ -20,7 +20,7 @@ public class ApiHomeWork01Test extends BaseApiTest {
     @Stories({@Story("List APM adresses"), @Story("Privat bank API")})
     @Link("G-46")
     @TmsLink("TC-1")
-    @Description("Please ignore me!")
+    @Description("This test list ATM adresses in Kyiv")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void checkATMList() {
