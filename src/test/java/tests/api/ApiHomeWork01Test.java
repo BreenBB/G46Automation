@@ -14,7 +14,6 @@ import static org.hamcrest.CoreMatchers.hasItems;
 public class ApiHomeWork01Test extends BaseApiTest {
 
     private final static Logger LOG = LogManager.getLogger("API Тест получение списка банкоматов");
-    private String city="киев";
 
     @Owner("BreenBB")
     @Feature("")
@@ -30,7 +29,7 @@ public class ApiHomeWork01Test extends BaseApiTest {
                 .queryParam("json")
                 .queryParam("atm")
                 .queryParam("address", "")
-                .queryParam("city", city)
+                .queryParam("city", "Киев")
                 .when()
                 .get("https://api.privatbank.ua/p24api/infrastructure")
                 .then()
