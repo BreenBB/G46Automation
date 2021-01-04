@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class PomPage extends BaseAuthorizedPage {
     private final static String TITLE = "Страница файла pom.xml";
 
-    private By seleniumVer = By.id("LC26");
+    private By seleniumVer = By.id("LC28");
 
     public PomPage(WebDriver driver) {
         super(driver, TITLE);

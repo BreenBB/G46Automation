@@ -98,7 +98,7 @@
                 <version>2.12.4</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
-                    <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
+                    <argLine>-Dbrowser=${browser} -D${driver}=${driver.path} -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
                     <properties>
                         <property>
                             <name>listener</name>
@@ -127,4 +127,40 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>Chrome</id>
+            <properties>
+                <browser>chrome</browser>
+                <driver>webdriver.chrome.driver</driver>
+                <driver.path>${project.basedir}/src/main/resources/drivers/chrome/v87/chromedriver.exe</driver.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>Firefox</id>
+            <properties>
+                <browser>firefox</browser>
+                <driver>webdriver.gecko.driver</driver>
+                <driver.path>${project.basedir}/src/main/resources/drivers/firefox/v0.28.0/geckodriver.exe</driver.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>InternetExplorer</id>
+            <properties>
+                <browser>firefox</browser>
+                <driver>webdriver.gecko.driver</driver>
+                <driver.path>${project.basedir}/src/main/resources/drivers/firefox/v0.20.0/geckodriver.exe</driver.path>
+            </properties>
+        </profile>
+        <profile>
+            <id>Opera</id>
+            <properties>
+                <browser>opera</browser>
+                <driver>webdriver.opera.driver</driver>
+                <driver.path>${project.basedir}/src/main/resources/drivers/opera/v73/operadriver.exe</driver.path>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
