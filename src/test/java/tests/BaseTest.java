@@ -28,10 +28,10 @@ public abstract class BaseTest {
                 driver = new OperaDriver();
                 break;
             case "ie":
-                driver = new ChromeDriver();
+                driver = new InternetExplorerDriver();
                 break;
             default:
-                driver = new ChromeDriver();
+                driver = new FirefoxDriver();
                 break;
         }
        // driver.manage().window().maximize();
