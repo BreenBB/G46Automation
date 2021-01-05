@@ -140,17 +140,17 @@
         <profile>
             <id>Firefox</id>
             <properties>
-                <browser>firefox</browser>
-                <driver>webdriver.gecko.driver</driver>
-                <driver.path>${project.basedir}/src/main/resources/drivers/firefox/v0.28.0/geckodriver.exe</driver.path>
+                <browser>chrome</browser>
+                <driver>webdriver.chrome.driver</driver>
+                <driver.path>${project.basedir}/src/main/resources/drivers/chrome/v87/chromedriver.exe</driver.path>
             </properties>
         </profile>
         <profile>
             <id>InternetExplorer</id>
             <properties>
-                <browser>firefox</browser>
-                <driver>webdriver.gecko.driver</driver>
-                <driver.path>${project.basedir}/src/main/resources/drivers/firefox/v0.20.0/geckodriver.exe</driver.path>
+                <browser>chrome</browser>
+                <driver>webdriver.chrome.driver</driver>
+                <driver.path>${project.basedir}/src/main/resources/drivers/chrome/v87/chromedriver.exe</driver.path>
             </properties>
         </profile>
         <profile>
